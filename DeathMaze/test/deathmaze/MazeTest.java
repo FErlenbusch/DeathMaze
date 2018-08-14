@@ -1,4 +1,4 @@
-package test.deathmaze;
+package deathmaze;
 
 import junit.framework.TestCase;
 
