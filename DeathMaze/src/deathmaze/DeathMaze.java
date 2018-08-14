@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package deathmaze;
 
 import java.util.ArrayList;
@@ -20,7 +15,6 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.Tooltip;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
@@ -52,10 +46,6 @@ public class DeathMaze extends Application {
      * The path to the CSS for the application.
      */
     private static final String STYLE_SHEET = "/styles/UIStyle.css";
-    /**
-     * The path to the application's icon.
-     */
-    private static final String ICON_PATH = "/images/maze.png";
     /**
      * The id name for a title element
      */
@@ -106,7 +96,7 @@ public class DeathMaze extends Application {
     /**
      * The start method that starts the UI. Required by JavaFX.
      *
-     * @param	primaryStage	The primary stage determined by JavaFX.
+     * @param	stage	The primary stage determined by JavaFX.
      */
     @Override
     public void start(Stage stage) {
@@ -121,7 +111,6 @@ public class DeathMaze extends Application {
         scene.getStylesheets().add(DeathMaze.class.getResource(STYLE_SHEET).toExternalForm());
 
         primaryStage.setScene(scene);
-        primaryStage.getIcons().add(new Image(ICON_PATH));
         primaryStage.show();
     }
 
@@ -224,9 +213,9 @@ public class DeathMaze extends Application {
         buttons.add(instructionsBtn);
         buttons.add(exitBtn);
 
-        for (Button btn : buttons) {
+        buttons.forEach((btn) -> {
             btn.getTooltip().setContentDisplay(ContentDisplay.BOTTOM);
-        }
+        });
 
         return buttons;
     }
@@ -481,7 +470,6 @@ public class DeathMaze extends Application {
         newMazeSettingsScene.getStylesheets().add(DeathMaze.class.getResource(STYLE_SHEET).toExternalForm());
 
         newMazeSettingsStage.setScene(newMazeSettingsScene);
-        newMazeSettingsStage.getIcons().add(new Image(ICON_PATH));
         newMazeSettingsStage.show();
     }
 
@@ -541,7 +529,6 @@ public class DeathMaze extends Application {
         instructionsScene.getStylesheets().add(DeathMaze.class.getResource(STYLE_SHEET).toExternalForm());
 
         instructionStage.setScene(instructionsScene);
-        instructionStage.getIcons().add(new Image(ICON_PATH));
         instructionStage.show();
     }
 
